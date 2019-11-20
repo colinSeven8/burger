@@ -34,7 +34,7 @@ function objToSql(obj) {
   return arr.toString();
 }
 
-// Object for all our SQL statement functions.
+// Object for all our SQL statement functions, call backs send the data back to the front-end
 let orm = {
   // Select everything from the burger table
   selectall: (tableInput, cb) => {
@@ -63,7 +63,7 @@ let orm = {
       cb(result);
     });
   },
-  // UPDATE burgers SET burger_name WHERE ? Ex: {burger_name: Whopper, devoured: true}
+  // UPDATE burgers SET burger_name WHERE ? Ex: {burger_name: Whopper}, {devoured: TRUE}
   updateOne: (table, objColVals, condition, cb) => {
     let queryString = "UPDATE " + table;
 
