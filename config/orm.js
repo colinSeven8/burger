@@ -1,4 +1,4 @@
-let orm = require('../config/connection');
+let connection = require('../config/connection');
 
 // Helper function that adds '?' to SQL syntax
 function printQuestionMarks(num) {
@@ -37,7 +37,7 @@ function objToSql(obj) {
 // Object for all our SQL statement functions, call backs send the data back to the front-end
 let orm = {
   // Select everything from the burger table
-  selectall: (tableInput, cb) => {
+  selectAll: (tableInput, cb) => {
     let queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, (err, result) => {
       if (err) throw err;

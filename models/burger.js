@@ -1,4 +1,3 @@
-
 let orm = require("../config/orm");
 
 // The burger object, call back function shoots the data back to the front-end
