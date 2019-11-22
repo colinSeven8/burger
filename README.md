@@ -15,23 +15,7 @@ Eat Da Burger will have you DEVOURING burgers left AND right.
 ## Screenshots
 
 ### Eat Da Burger Home Page
-![](assets/images/home.png)
-
-****
-### List of Friends
-![](assets/images/friends.png)
-
-****
-### GitHub Pages
-![](assets/images/github.png)
-
-****
-### Take the Survey
-![](assets/images/survey.png)
-
-****
-### The Survey Says....
-![](assets/images/results.png)
+![](assets/images/burger_home.png)
 
 ****
 ## Setting up Eat Da Burger...

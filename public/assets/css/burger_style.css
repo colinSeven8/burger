@@ -1,6 +1,10 @@
 body {
     background-color: orange;
   }
+
+  .burgerHeader {
+    margin-top: 30px;
+  }
   
   li {
     padding: 5px;
@@ -27,16 +31,12 @@ body {
   }
   
   .notDevouredBurger {
-    background-color: white;
-    width: 30%;
-    height: 75px;
+    font-size: large;
     float: right;
   }
   
   .devouredBurger {
-    background-color: white;
-    width: 30%;
-    height: 75px;
+    font-size: large;
     margin-bottom: 1%;
   }
   
@@ -56,7 +56,6 @@ body {
   }
   
   .addBurger {
-    border-top: 3px solid orangered;
     padding-top: 1%;
     margin-top: 1%;
   }

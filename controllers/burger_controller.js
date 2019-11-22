@@ -1,14 +1,15 @@
 let express = require("express");
-let burger = require("../models/burger");
+let burger = require("../models/burger.js");
 
 let router = express.Router();
 
 router.get("/", (req, res) => {
     burger.selectAll((data) => {
-        let obj = {
+        let hbsObj = {
             burgers: data
         };
-        res.render("index", obj);
+        console.log(hbsObj);
+        res.render("index", hbsObj);
     });
 });
 router.post("api/burgers", (req, res) => {
@@ -28,14 +29,6 @@ router.put("api/burgers/:id", (req, res) => {
         devoured: req.body.devoured
     }, condition, (result) => {
         if (result.changeRows === 0) return res.status(404).end();
-        else res.status(200).end();
-    });
-});
-router.delete("/api/burgers/:id", function (req, res) {
-    let condition = "id = " + req.params.id;
-
-    burger.delete(condition, function (result) {
-        if (result.affectedRows == 0) return res.status(404).end();
         else res.status(200).end();
     });
 });

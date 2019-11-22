@@ -1,6 +1,6 @@
 let orm = require("../config/orm");
 
-// The burger object, call back function shoots the data back to the front-end
+// The burger object, call back function shoots the data back to the ajax and to the FE
 let burger = {
     selectAll: (cb) => {
         orm.selectAll("burgers", (res) => {
