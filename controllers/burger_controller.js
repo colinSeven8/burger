@@ -12,24 +12,30 @@ router.get("/", (req, res) => {
     });
 });
 router.post("api/burgers", (req, res) => {
-    let userData = req.body;
-    burgers.create([
+    burger.insertOne([
         'burger_name', 'devoured'
     ], [
-        userData.burger_name, userData.devoured
+        req.body.burger_name, req.destroy.devoured
     ], (result) => {
         res.json({ id: result.insertId });
     });
 });
 router.put("api/burgers/:id", (req, res) => {
     let condition = "id = " + req.params.id;
-    let userData = req.body;
 
     // Update the devoured status of the id requested, if no rows changed, it's not there
-    burgers.update({
-        devoured: userData.devoured
+    burger.updateOne({
+        devoured: req.body.devoured
     }, condition, (result) => {
         if (result.changeRows === 0) return res.status(404).end();
+        else res.status(200).end();
+    });
+});
+router.delete("/api/burgers/:id", function (req, res) {
+    let condition = "id = " + req.params.id;
+
+    burger.delete(condition, function (result) {
+        if (result.affectedRows == 0) return res.status(404).end();
         else res.status(200).end();
     });
 });
