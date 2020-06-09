@@ -2,7 +2,7 @@ body {
     background-color: orange;
   }
 
-  .burgerHeader {
+  .burger-header {
     margin-top: 30px;
   }
   
@@ -17,25 +17,21 @@ body {
   
   .form-group {
     margin-bottom: 5px;
+    text-align: center;
   }
   
-  .burgerContainer {
-    width: 50%;
-    float: left;
-  }
-  
-  .change-devoured {
+  .btn-success {
     float: right;
     margin-left: 2.5%;
     margin-right: 2.5%;
   }
   
-  .notDevouredBurger {
+  .not-devoured-burger {
     font-size: large;
     float: right;
   }
   
-  .devouredBurger {
+  .devoured-burger {
     font-size: large;
     margin-bottom: 1%;
   }
@@ -47,23 +43,17 @@ body {
     float: right;
   }
   
-  
-  .burgerHeader,
-  .addBurger {
+  .burger-header,
+  .container {
     text-align: center;
-    align-content: center;
     color: red;
   }
   
-  .addBurger {
+  .container {
     padding-top: 1%;
     margin-top: 1%;
-  }
-  
-  .clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+    width: 50%;
+    color: white;
   }
   
   textarea {

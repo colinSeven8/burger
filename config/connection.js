@@ -1,5 +1,5 @@
 // Set up MySQL connection.
-let mysql = require("mysql");
+const mysql = require("mysql");
 
 let connection;
 
@@ -11,8 +11,16 @@ if (process.env.JAWSDB_URL) {
     port: 3306,
     user: "root",
     password: "root",
-    database: "burgers_db"
+    database: "burger_db"
   });
 }
+
+connection.connect(function(err) {
+  if (err) {
+    console.error(`Error connecting: ${err.stack}`);
+    return;
+  }
+  console.log(`Connected as ID ${connection.threadId}`);
+});
 
 module.exports = connection;

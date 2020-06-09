@@ -1,41 +1,53 @@
-<div class="burgerHeader">
+<div class="burger-header">
     <img src="assets/img/burger.png" alt="burger" style="width: 150px; height: 150px;">
     <h1>Eat-Da-Burger!</h1>
 </div>
 
-<div class="clearfix">
-<div class="addBurger">
-    <form class="create-form">
-        <div class="form-group">
-            <textarea id="bu"></textarea>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <form class="create-form">
+                <input type="text" name="burger_name" class="form-control" id="bu" value=""
+                    placeholder="Enter a burger you want to eat and Click the 'Add Burger' button">
+                <button type="submit" class="btn btn-danger" style="width: 300px; margin-bottom: 30px;">Add
+                    Burger</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        <p style="color: black;">Enter a burger you want to eat Click the "Submit" button</p>
-    </form>
-</div>
-    <div class="burgerContainer">
-        {{#each burgers}}
-        {{#unless devoured}}
-        <div class="wrapper">
-            <button class="change-devoured btn btn-success" data-id="{{id}}" data-newdevoured={{devoured}}>
-                {{#if devoured}}Make another!{{else}}Devour it!{{/if}}
-            </button>
-            <div class="notDevouredBurger">
-                {{id}}.{{burger_name}}
+    </div>
+    <div class="col-md-6 text-right">
+        <div class="row">
+            {{#each burgers}}
+            {{#unless this.devoured}}
+            <div class="not-devoured-burger col-md-7">
+                {{this.burger_name}}
             </div>
+            <div class="wrapper col-md-5 text-center">
+                <form class="devour-form">
+                    <input input type="hidden" class="burger_id" type="text" value={{this.id}}>
+                    <button type="submit" class="btn btn-success">Devour it!</button>
+                </form>
+            </div>
+            {{/unless}}
+            {{/each}}
         </div>
-        {{/unless}}
-        {{/each}}
     </div>
 
-    <div class="burgerContainer">
-        {{!-- Burgers that have been devoured --}}
-        {{#each burgers}}
-        {{#if devoured}}
-        <div class="devouredBurger">
-            {{id}}.{{burger_name}}
+    {{!-- Burgers that have been devoured --}}
+    <div class="col-md-6 text-left">
+        <div class="row">
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <div class="wrapper col-md-5 text-center">
+                <form class="make-again-form">
+                    <button type="submit" class="btn btn-success" data-id="{{this.id}}"
+                        data-newdevoured={{this.devoured}}>Make Again!</button>
+                    <div class="devoured-burger col-md-7">
+                        {{this.burger_name}}
+                    </div>
+                </form>
+            </div>
+            {{/if}}
+            {{/each}}
         </div>
-        {{/if}}
-        {{/each}}
     </div>
 </div>

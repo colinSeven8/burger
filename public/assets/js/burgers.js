@@ -1,36 +1,41 @@
-$(function () {
-  $(".change-devoured").on("click", (event) => {
-    let id = $(this).data("id");
-    let newDevoured = $(this).data("newdevoured");
-    console.log('This is the devoured state ' + newDevoured);
-    let newDevouredState = {
-      devoured: newDevoured
-    };
-    $.ajax("/api/burgers/" + id, {
-      type: "PUT",
-      data: newDevouredState
-    }).then(
-      () => {
-        console.log("changed devoured to  ", newDevoured);
-        location.reload();
-      }
-    );
+$(document).ready(function () {
+  $(".devour-form").on("submit", function (event) {
+    event.preventDefault();
+    let id = $(this).children(".burger_id").val();
+    console.log(`id ${id}`);
+    $.ajax({
+      method: "PUT",
+      url: "/burgers/" + id
+    }).then(function () {
+      location.reload();
+    });
   });
 
-  $(".create-form").on("submit", (event) => {
+  $(".create-form").on("submit", function (event) {
     event.preventDefault();
-    let newBurger = {
-      burger_name: $("#bu").val().trim(),
-      devoured: 0
-    };
-    $.ajax("/api/burgers", {
+    let newBurger = $(this).children("#bu").val();
+    console.log(`newBurger ${newBurger}`);
+
+    $.ajax({
       type: "POST",
-      data: newBurger
-    }).then(
-      () => {
-        console.log("created new burger");
-        location.reload();
-      }
-    );
+      url: "/burgers/create",
+      data: {newBurger:newBurger}
+    }).then(function () {
+      console.log("created new burger");
+      location.reload();
+    });
+  });
+
+  $(".make-again-form").on("submit", function (event) {
+    event.preventDefault();
+    let remadeBurger = $(this);
+    console.log(`remadeBurger ${remadeBurger}`);
+
+    $.ajax({
+
+    }).then(function () {
+      console.log("Re-made burger");
+      location.reload();
+    })
   });
 });

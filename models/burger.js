@@ -2,21 +2,25 @@ let orm = require("../config/orm");
 
 // The burger object, call back function shoots the data back to the ajax and to the FE
 let burger = {
-    selectAll: (cb) => {
-        orm.selectAll("burgers", (res) => {
-            cb(res);
-        });
-    },
-    insertOne: (cols, vals, cb) => {
-        orm.insertOne("burgers", cols, vals, (res) => {
-            cb(res);
-        });
-    },
-    updateOne: (objColVals, condition, cb) => {
-        orm.updateOne("burgers", objColVals, condition, (res) => {
-            cb(res);
-        });
-    }
+  selectAll: function (cb) {
+    orm.selectAll("burgers", function (res) {
+      cb(res);
+    });
+  },
+  insertOne: function (name, cb) {
+    orm.insertOne("burgers", ["burger_name", "devoured"], [name, false], cb);
+  },
+  updateOne: function (id, cb) {
+    let condition = "id=" + id;
+    orm.updateOne(
+      "burgers",
+      {
+        devoured: true,
+      },
+      condition,
+      cb
+    );
+  },
 };
 
 module.exports = burger;
