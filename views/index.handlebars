@@ -6,48 +6,36 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 form-group">
-            <form class="create-form">
-                <input type="text" name="burger_name" class="form-control" id="bu" value=""
+            <form action="/burgers/create" method="POST">
+                <input type="text" class="form-control col-md-8" name="burger_name" value="" id="enter_text"
                     placeholder="Enter a burger you want to eat and Click the 'Add Burger' button">
-                <button type="submit" class="btn btn-danger" style="width: 300px; margin-bottom: 30px;">Add
+                <button type="submit" class="btn btn-danger">Add
                     Burger</button>
             </form>
         </div>
     </div>
-    <div class="col-md-6 text-right">
-        <div class="row">
-            {{#each burgers}}
-            {{#unless this.devoured}}
-            <div class="not-devoured-burger col-md-7">
-                {{this.burger_name}}
+    <div class="row">
+        <div class="col-md-6">
+            <h2>Have a Delicious Burger!</h2>
+            <div class="burger-list">
+                {{#each burgers}}
+                {{#unless devoured}}
+                {{> burgers/burgers-block devoured=true}}
+                {{/unless}}
+                {{/each}}
             </div>
-            <div class="wrapper col-md-5 text-center">
-                <form class="devour-form">
-                    <input input type="hidden" class="burger_id" type="text" value={{this.id}}>
-                    <button type="submit" class="btn btn-success">Devour it!</button>
-                </form>
-            </div>
-            {{/unless}}
-            {{/each}}
         </div>
-    </div>
 
-    {{!-- Burgers that have been devoured --}}
-    <div class="col-md-6 text-left">
-        <div class="row">
-            {{#each burgers}}
-            {{#if this.devoured}}
-            <div class="wrapper col-md-5 text-center">
-                <form class="make-again-form">
-                    <button type="submit" class="btn btn-success" data-id="{{this.id}}"
-                        data-newdevoured={{this.devoured}}>Make Again!</button>
-                    <div class="devoured-burger col-md-7">
-                        {{this.burger_name}}
-                    </div>
-                </form>
+        <div class="col-md-6">
+            <h2>Make that Burger Again!</h2>
+            <div class="burger-list">
+                {{#each burgers}}
+                {{#if devoured}}
+                {{> burgers/burgers-block devoured=false}}
+                {{/if}}
+                {{/each}}
             </div>
-            {{/if}}
-            {{/each}}
         </div>
     </div>
+</div>
 </div>

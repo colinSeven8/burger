@@ -1,0 +1,10 @@
+<div class="row">
+    <div class="burger-name col-md-7">
+        {{this.burger_name}}
+    </div>
+    <div class="col-md-5">
+        <button class="change-devoured btn-success" data-id="{{id}}" data-newdevoured="{{devoured}}">
+            {{#if devoured}}Devour it!{{else}}Make it Again!{{/if}}
+        </button>
+    </div>
+</div>

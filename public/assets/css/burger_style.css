@@ -1,62 +1,45 @@
 body {
-    background-color: orange;
-  }
+  background-color: orange;
+}
 
-  .burger-header {
-    margin-top: 30px;
-  }
-  
-  li {
-    padding: 5px;
-    margin: 5px;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .form-group {
-    margin-bottom: 5px;
-    text-align: center;
-  }
-  
-  .btn-success {
-    float: right;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-  }
-  
-  .not-devoured-burger {
-    font-size: large;
-    float: right;
-  }
-  
-  .devoured-burger {
-    font-size: large;
-    margin-bottom: 1%;
-  }
-  
-  .wrapper {
-    width: 100%;
-    text-align: center;
-    padding: 1%;
-    float: right;
-  }
-  
-  .burger-header,
-  .container {
-    text-align: center;
-    color: red;
-  }
-  
-  .container {
-    padding-top: 1%;
-    margin-top: 1%;
-    width: 50%;
-    color: white;
-  }
-  
-  textarea {
-    width: 30%;
-    height: 75px;
-  }
+.burger-header {
+  margin-top: 30px;
+}
+
+.burger-name {
+  font-size: larger;
+}
+
+.burger-header,
+.container {
+  text-align: center;
+  color: red;
+}
+
+h2 {
+  margin-bottom: 5%;
+}
+
+.btn-danger {
+  width: 20%;
+}
+
+.burger-name,
+.btn-success {
+  padding-bottom: 5%;
+}
+
+.burger-list {
+  margin: 5%;
+}
+
+.form-control {
+  display: inline-flex;
+}
+
+.container {
+  padding-top: 1%;
+  margin-top: 1%;
+  width: 70%;
+  color: white;
+}
