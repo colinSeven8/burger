@@ -24,6 +24,10 @@ h2 {
   width: 20%;
 }
 
+.burger-name {
+  text-align: left;
+}
+
 .burger-name,
 .btn-success {
   padding-bottom: 5%;
