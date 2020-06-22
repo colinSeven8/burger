@@ -46,6 +46,4 @@ Eat Da Burger will have you DEVOURING burgers left AND right.
 Colin Reesor created this version of the Eat Da Burger!
 
 ****
-## Try it out here!
-
-Click [here](https://eat-da-burger-colin.herokuapp.com/) tp try it out!
+## Try it out [here](https://eat-da-burger-colin.herokuapp.com/)!
