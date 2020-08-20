@@ -1,4 +1,4 @@
-let connection = require("./connection.js");
+let connection = require("../connection.js");
 
 // Helper function that adds '?' to SQL syntax
 function printQuestionMarks(num) {
