@@ -21,6 +21,6 @@ const routes = require("./controllers/burger_controller.js");
 app.use(routes);
 
 // Syncing our sequelize models and then starting our Express app
-  app.listen(PORT, function() {
+  app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
   });
