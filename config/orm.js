@@ -29,7 +29,7 @@ function objToSql(obj) {
 let orm = {
   // Select everything from the burger table
   selectAll: function (tableInput, cb) {
-    let queryString = `SELECT * FROM ${tableInput};`;
+    let queryString = `SELECT * FROM ${tableInput}`;
     console.log(`selectAll queryString: ${queryString}`);
     connection.query(queryString, function (err, result) {
       if (err) throw err;
