@@ -7,7 +7,7 @@ if (process.env.CLEARDB_DATABASE_URL) {
   connection = mysql.createConnection(process.env.CLEARDB_DATABASE_URL);
 } else {
   connection = mysql.createConnection({
-    host: "127.0.0.1",
+    host: "localhost",
     port: 3306,
     user: "root",
     password: "root",
