@@ -1,5 +1,5 @@
 {
-  "name": "burger",
+  "name": "eat-da-burger-colin",
   "version": "1.0.0",
   "description": "A burger-devouring app!",
   "main": "connection.js",
@@ -11,13 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/colinSeven8/burger.git"
   },
-  "author": "",
+  "author": "Colin Reesor",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/colinSeven8/burger/issues"
   },
   "homepage": "https://github.com/colinSeven8/burger#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "mysql": "^2.18.1"
